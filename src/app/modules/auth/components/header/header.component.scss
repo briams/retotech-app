@@ -1,0 +1,14 @@
+.auth__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  &__logo {
+    max-height: 40px;
+  }
+}

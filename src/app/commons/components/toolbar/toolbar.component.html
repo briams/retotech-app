@@ -1,0 +1,73 @@
+<mat-toolbar class="toolbar">
+  <div class="toolbar__left">
+    <img class="toolbar__logo" src="assets/logos/logo.png" alt="Logo" />
+
+    <button mat-button [matMenuTriggerFor]="workspace">
+      workspaces
+    </button>
+
+    <button mat-button [matMenuTriggerFor]="recent">
+      Recent
+    </button>
+  </div>
+
+  <div class="toolbar__right">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <mat-icon>person</mat-icon>
+    </button>
+  </div>
+
+  <span class="toolbar__title">{{ title }}</span>
+</mat-toolbar>
+
+<mat-menu #recent="matMenu">
+  <button mat-menu-item>
+    <div class="recent-item">
+      <div class="recent-item-color"></div>
+      <div class="recent-item-info">
+        <span class="recent-item-info-title">Prueba</span>
+        <span>{{'jhonenrique@gmail.com'}}</span>
+      </div>
+    </div>
+  </button>
+</mat-menu>
+
+<mat-menu #workspace="matMenu">
+  <span class="ml-3">Your Workspace</span>
+
+  <button
+    mat-menu-item
+    (click)="expanded = !expanded; $event.stopPropagation();"
+  >
+    <div class="workspace-item">
+      <mat-icon> business_center </mat-icon>
+      {{'jhonenrique@gmail.com'}}
+      <mat-icon> keyboard_arrow_down </mat-icon>
+    </div>
+  </button>
+  <div *ngIf="expanded" class="pl-4">
+    <button mat-menu-item>
+      <mat-icon> dashboard </mat-icon>
+      Boards
+    </button>
+    <button mat-menu-item>
+      <mat-icon> visibility </mat-icon>
+      views
+    </button>
+    <button mat-menu-item>
+      <mat-icon> people </mat-icon>
+      users
+    </button>
+    <button mat-menu-item>
+      <mat-icon> settings </mat-icon>
+      settings
+    </button>
+  </div>
+</mat-menu>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>DashBoard</button>
+  <button mat-menu-item>Settings</button>
+  <button mat-menu-item>Earnings</button>
+  <button mat-menu-item (click)="onLogout()">sign out</button>
+</mat-menu>

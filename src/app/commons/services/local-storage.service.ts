@@ -1,0 +1,34 @@
+import { Injectable } from "@angular/core";
+
+@Injectable({
+  providedIn: "root",
+})
+export class LocalStorageService {
+  constructor() {
+    //
+  }
+
+  setItem(key: any, value: any, jsonParse = false): void {
+    if (!key) throw new Error("key is required");
+    if (jsonParse) {
+      value = JSON.stringify(value);
+    }
+    localStorage.setItem(key, value);
+  }
+
+  getItem(key: string, jsonParse = false) {
+    if (!key) throw new Error("key is required");
+    const value = localStorage.getItem(key);
+    if (!value) return undefined;
+    return jsonParse ? JSON.parse(value) : value;
+  }
+
+  remove(key: string) {
+    if (!key) throw new Error("key is required");
+    localStorage.removeItem(key);
+  }
+
+  removeAll() {
+    localStorage.clear();
+  }
+}

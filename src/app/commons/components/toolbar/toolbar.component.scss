@@ -1,0 +1,93 @@
+.toolbar {
+  height: 88px;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  background-color: #1b3b48;
+
+  &__left {
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 56px;
+  }
+
+  &__title {
+    position: fixed;
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__right {
+    z-index: 1;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    gap: 16px;
+    color: #fff;
+
+    & > button {
+      color: inherit;
+    }
+  }
+}
+
+.left-items {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+
+.right-items {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &_social {
+    display: flex;
+
+    @media only screen and (min-width: 1201px) {
+      display: none;
+    }
+  }
+}
+
+.recent-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  &-color {
+    width: 40px;
+    height: 25px;
+    background-color: rgb(151, 100, 5);
+    border-radius: 3px;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 12px;
+    line-height: 15px;
+
+    &-title {
+      font-weight: 800;
+    }
+  }
+}
+
+.workspace-item {
+  display: flex;
+  gap: 4px;
+}
